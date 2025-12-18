@@ -25,6 +25,7 @@
 
   environment.systemPackages = with pkgs; [
     podman
+    podman-tui
     podman-compose
     buildah
     skopeo
