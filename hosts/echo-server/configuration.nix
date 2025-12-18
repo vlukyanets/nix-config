@@ -5,8 +5,10 @@
     [
       ./hardware-configuration.nix
       ../../modules/nixos/common.nix
+      ../../modules/nixos/common-server.nix
       ../../modules/nixos/podman-linger-by-group.nix
-      ../../modules/nixos/roles/podman-server.nix
+      ../../modules/nixos/podman-server.nix
+      ../../modules/nixos/nvidia-server.nux
     ];
 
   boot.loader.systemd-boot.enable = true;
