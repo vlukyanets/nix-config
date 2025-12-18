@@ -2,21 +2,14 @@
 
 {
   environment.systemPackages = with pkgs; [
-    nvtop
-    nvidia-smi
-    cudaPackages.cudatoolkit
+    nvtopPackages.full
     pciutils
     usbutils
     lm_sensors
   ];
 
   services.xserver.enable = false;
-
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = false;
-  };
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     open = false;
