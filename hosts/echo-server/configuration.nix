@@ -8,7 +8,7 @@
       ../../modules/nixos/common-server.nix
       ../../modules/nixos/podman-linger-by-group.nix
       ../../modules/nixos/podman-server.nix
-      ../../modules/nixos/nvidia-server.nux
+      ../../modules/nixos/nvidia-server.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
