@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ../../modules/nixos/common.nix
       ../../modules/nixos/common-server.nix
+      ../../modules/nixos/file-server.nix
       ../../modules/nixos/podman-linger-by-group.nix
       ../../modules/nixos/podman-server.nix
       ../../modules/nixos/nvidia-server.nix
