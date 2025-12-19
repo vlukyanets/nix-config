@@ -1,9 +1,7 @@
 { config, lib, pkgs, ... }:
 
 let
-{
   vars = import ./vars.nix;
-}
 in
 {
   imports =
