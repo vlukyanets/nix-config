@@ -8,7 +8,10 @@
 
   programs.git = {
     enable = true;
-    lfs = true;
+    lfs = {
+      enable = true;
+      package = "git-lfs";
+    };
     settings = {
       user = {
         name = "Valentin Lukyanets";
