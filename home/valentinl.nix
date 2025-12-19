@@ -8,6 +8,7 @@
 
   programs.git = {
     enable = true;
+    lfs = true;
     settings = {
       user = {
         name = "Valentin Lukyanets";
@@ -16,6 +17,7 @@
 
       init.defaultBranch = "master";
       pull.rebase = true;
+      http.postBuffer = 524288000;
     };
   };
   programs.zsh.enable = true;
