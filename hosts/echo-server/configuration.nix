@@ -80,7 +80,9 @@
 }
 
 let
+{
   vars = import ./vars.nix;
+}
 in
 {
   roles.powlK8s = {
