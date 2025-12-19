@@ -13,7 +13,7 @@
       ../../modules/roles/powl-k8s-server.nix
     ];
 
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true;
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -67,10 +67,14 @@
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 22 ];
 
-  roles.powlK8s = {
-    enable = true;
-    repoDir = "/opt/powl";
-  };
+  let
+    vars = import ./vars.nix;
+  in
+    roles.powlK8s = {
+      enable = true;
+      repoDir = "/opt/powl";
+      masterAddress = vars.powlMasterAddress;
+    };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.gc = {
