@@ -10,6 +10,7 @@
       ../../modules/nixos/podman-linger-by-group.nix
       ../../modules/nixos/podman-server.nix
       ../../modules/nixos/nvidia-server.nix
+      ../../modules/roles/powl-k8s-server.nix
     ];
 
   nixpkgs.config.allowUnfree = true;
@@ -65,6 +66,11 @@
 
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 22 ];
+
+  roles.powlK8s = {
+    enable = true;
+    repoDir = "/opt/powl";
+  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.gc = {
