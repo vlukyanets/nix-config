@@ -1,5 +1,10 @@
 { config, lib, pkgs, ... }:
 
+let
+{
+  vars = import ./vars.nix;
+}
+in
 {
   imports =
     [
@@ -79,15 +84,3 @@
   system.stateVersion = "25.11";
 }
 
-let
-{
-  vars = import ./vars.nix;
-}
-in
-{
-  roles.powlK8s = {
-    enable = true;
-    repoDir = "/opt/powl";
-    masterAddress = vars.powlMasterAddress;
-  };
-}
