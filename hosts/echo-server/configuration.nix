@@ -67,17 +67,6 @@
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 22 ];
 
-  let
-    vars = import ./vars.nix;
-  in
-  {
-    roles.powlK8s = {
-      enable = true;
-      repoDir = "/opt/powl";
-      masterAddress = vars.powlMasterAddress;
-    };
-  }
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.gc = {
     automatic = true;
@@ -90,3 +79,13 @@
   system.stateVersion = "25.11";
 }
 
+let
+  vars = import ./vars.nix;
+in
+{
+  roles.powlK8s = {
+    enable = true;
+    repoDir = "/opt/powl";
+    masterAddress = vars.powlMasterAddress;
+  };
+}
