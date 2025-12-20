@@ -3,6 +3,7 @@
   imports =
     [
       ../../modules/home/dev/rust.nix
+      ../../modules/home/dev/python.nix
     ];
 
   home.username = "valentinl";
@@ -28,5 +29,10 @@
   programs.zsh.enable = true;
 
   dev.rust.enableStable = true;
+  dev.python = {
+    enable = true;
+    libraries = [ "requests" "numpy" "scipy" "matplotlib" "pandas" ];
+    enableDevTools = true;
+  };
 }
 
