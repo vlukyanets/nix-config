@@ -13,7 +13,7 @@ in
       ../../modules/nixos/podman-linger-by-group.nix
       ../../modules/nixos/podman-server.nix
       ../../modules/nixos/nvidia-server.nix
-      ../../modules/roles/powl-k8s-server.nix
+      # ../../modules/roles/powl-k8s-server.nix
     ];
 
   boot.loader.systemd-boot.enable = true;

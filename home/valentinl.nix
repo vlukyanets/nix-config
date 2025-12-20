@@ -1,5 +1,10 @@
 { config, pkgs, ... }:
 {
+  imports =
+    [
+      ../modules/dev/rust.nix
+    ];
+
   home.username = "valentinl";
   home.homeDirectory = "/home/valentinl";
   home.stateVersion = "25.11";
@@ -21,5 +26,10 @@
     };
   };
   programs.zsh.enable = true;
+
+  dev.rust = {
+    enable = "true";
+    toolchain = "stable";
+  };
 }
 
