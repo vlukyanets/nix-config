@@ -2,7 +2,7 @@
 {
   imports =
     [
-      ../modules/dev/rust.nix
+      ../../modules/home/dev/rust.nix
     ];
 
   home.username = "valentinl";
@@ -28,7 +28,7 @@
   programs.zsh.enable = true;
 
   dev.rust = {
-    enable = "true";
+    enable = true;
     toolchain = "stable";
   };
 }

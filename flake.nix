@@ -23,7 +23,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "hm-bak";
-            home-manager.users.${username} = import ./home/${username}.nix;
+            home-manager.users.${username} = import ./home/${host}/${username}.nix;
           }
         ] ++ extraModules;
       };

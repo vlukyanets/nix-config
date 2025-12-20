@@ -27,7 +27,7 @@ in
   };
 
   config = lib.mkIf cfg.enable {
-    environment.systemPackages =
+    home.packages =
       let
         toolchainPkg =
           if cfg.toolchain == "nixpkgs" then [ pkgs.rustc pkgs.cargo ]
