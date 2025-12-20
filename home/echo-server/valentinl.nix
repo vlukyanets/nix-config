@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 {
   imports =
     [
@@ -27,9 +27,6 @@
   };
   programs.zsh.enable = true;
 
-  dev.rust = {
-    enable = true;
-    toolchain = "stable";
-  };
+  dev.rust.enableStable = true;
 }
 

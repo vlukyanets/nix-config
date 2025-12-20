@@ -3,13 +3,14 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
+    fenix.url = "github:nix-community/fenix";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }:
+  outputs = { self, nixpkgs, home-manager, fenix, ... }@inputs:
   let
     mkHost = { host, system ? "x86_64-linux", username, extraModules ? [ ] }:
       nixpkgs.lib.nixosSystem {
@@ -23,6 +24,7 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "hm-bak";
+	    home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.${username} = import ./home/${host}/${username}.nix;
           }
         ] ++ extraModules;
