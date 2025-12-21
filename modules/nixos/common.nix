@@ -10,6 +10,7 @@
     wget
     coreutils
     neovim
+    mc
   ];
 
   services.openssh.enable = true;
