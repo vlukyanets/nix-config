@@ -19,43 +19,50 @@
   '';
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/5b68c7be-e240-4728-bbef-1b8f2bfe7f4e";
+    {
+      device = "/dev/disk/by-label/NIXOS-ROOT";
       fsType = "btrfs";
       options = [ "subvol=@" "compress=zstd" "noatime" "ssd" "space_cache=v2" ];
     };
 
   fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/5b68c7be-e240-4728-bbef-1b8f2bfe7f4e";
+    {
+      device = "/dev/disk/by-label/NIXOS-ROOT";
       fsType = "btrfs";
       options = [ "subvol=@home" "compress=zstd" "noatime" "ssd" "space_cache=v2" ];
     };
 
   fileSystems."/nix" =
-    { device = "/dev/disk/by-uuid/5b68c7be-e240-4728-bbef-1b8f2bfe7f4e";
+    {
+      device = "/dev/disk/by-label/NIXOS-ROOT";
       fsType = "btrfs";
       options = [ "subvol=@nix" "compress=zstd" "noatime" "ssd" "space_cache=v2" ];
     };
 
   fileSystems."/var/log" =
-    { device = "/dev/disk/by-uuid/5b68c7be-e240-4728-bbef-1b8f2bfe7f4e";
+    {
+      device = "/dev/disk/by-label/NIXOS-ROOT";
       fsType = "btrfs";
       options = [ "subvol=@log" "compress=zstd" "noatime" "ssd" "space_cache=v2" ];
     };
 
   fileSystems."/.snapshots" =
-    { device = "/dev/disk/by-uuid/5b68c7be-e240-4728-bbef-1b8f2bfe7f4e";
+    {
+      device = "/dev/disk/by-label/NIXOS-ROOT";
       fsType = "btrfs";
       options = [ "subvol=@snapshots" "compress=zstd" "noatime" "ssd" "space_cache=v2" ];
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/549C-F485";
+    {
+      device = "/dev/disk/by-label/NIXOS-BOOT";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
   fileSystems."/swap" =
-    { device = "/dev/disk/by-uuid/5b68c7be-e240-4728-bbef-1b8f2bfe7f4e";
+    {
+      device = "/dev/disk/by-label/NIXOS-ROOT";
       fsType = "btrfs";
       options = [ "subvol=@swap" "nodatacow" "noatime" "ssd" "space_cache=v2" ];
     };
