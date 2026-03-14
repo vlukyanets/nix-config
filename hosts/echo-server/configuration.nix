@@ -1,8 +1,5 @@
 { config, lib, pkgs, ... }:
 
-let
-  vars = import ./vars.nix;
-in
 {
   imports =
     [
@@ -13,7 +10,7 @@ in
       ../../modules/nixos/podman-linger-by-group.nix
       ../../modules/nixos/podman-server.nix
       ../../modules/nixos/nvidia-server.nix
-      # ../../modules/roles/powl-k8s-server.nix
+      ../../modules/nixos/lmstudio-server.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -76,8 +73,17 @@ in
     options = "--delete-older-than 14d";
   };
 
+  services.lmstudio = {
+    enable = true;
+    lmLink = {
+      enable = true;
+      keyIdFile = "/var/lib/lmstudio/secrets/key-id";
+      publicKeyFile = "/var/lib/lmstudio/secrets/public-key";
+      privateKeyFile = "/var/lib/lmstudio/secrets/private-key";
+    };
+  };
+
   hardware.enableRedistributableFirmware = true;
 
   system.stateVersion = "25.11";
 }
-
