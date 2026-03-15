@@ -31,7 +31,7 @@
     shell = pkgs.zsh;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMx7rCshYpRaCXKWXukP20XqAhcQI17cwMfX0cPdVseL valentinl@nova-win-work"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIih7u/1yc5dhGnIymr3Pfha6ty4AG47LQ/KKtmO0o75 valentinl@hyper"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFv4E2OIw3oPMCxyC2oDWlWqn0lrcq0gsom7vwsq8p2r valentinl@hyper-win"
     ];
   };
 
