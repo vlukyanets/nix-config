@@ -10,7 +10,7 @@
       ../../modules/nixos/podman-linger-by-group.nix
       ../../modules/nixos/podman-server.nix
       ../../modules/nixos/nvidia-server.nix
-      ../../modules/nixos/lmstudio-server.nix
+      # ../../modules/nixos/lmstudio-server.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
