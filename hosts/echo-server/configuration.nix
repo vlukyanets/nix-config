@@ -73,15 +73,15 @@
     options = "--delete-older-than 14d";
   };
 
-  services.lmstudio = {
-    enable = true;
-    lmLink = {
-      enable = true;
-      keyIdFile = "/var/lib/lmstudio/secrets/key-id";
-      publicKeyFile = "/var/lib/lmstudio/secrets/public-key";
-      privateKeyFile = "/var/lib/lmstudio/secrets/private-key";
-    };
-  };
+#  services.lmstudio = {
+#    enable = true;
+#    lmLink = {
+#      enable = true;
+#      keyIdFile = "/var/lib/lmstudio/secrets/key-id";
+#      publicKeyFile = "/var/lib/lmstudio/secrets/public-key";
+#      privateKeyFile = "/var/lib/lmstudio/secrets/private-key";
+#    };
+#  };
 
   hardware.enableRedistributableFirmware = true;
 
