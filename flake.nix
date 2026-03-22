@@ -32,6 +32,7 @@
   in {
     nixosConfigurations = {
       echo-server = mkHost { host="echo-server"; username="valentinl"; };
+      hyper-lin = mkHost { host="hyper-lin"; username="valentinl"; };
     };
   };
 }

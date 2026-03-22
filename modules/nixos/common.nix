@@ -3,6 +3,8 @@
 {
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  boot.supportedFilesystems = [ "ntfs3" ];
+
   environment.systemPackages = with pkgs; [
     tree
     git
