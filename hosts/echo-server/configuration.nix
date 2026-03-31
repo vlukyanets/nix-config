@@ -10,7 +10,7 @@
       ../../modules/nixos/podman-linger-by-group.nix
       ../../modules/nixos/podman-server.nix
       ../../modules/nixos/nvidia-server.nix
-      # ../../modules/nixos/lmstudio-server.nix
+      ../../modules/nixos/ollama-server.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -73,15 +73,7 @@
     options = "--delete-older-than 14d";
   };
 
-#  services.lmstudio = {
-#    enable = true;
-#    lmLink = {
-#      enable = true;
-#      keyIdFile = "/var/lib/lmstudio/secrets/key-id";
-#      publicKeyFile = "/var/lib/lmstudio/secrets/public-key";
-#      privateKeyFile = "/var/lib/lmstudio/secrets/private-key";
-#    };
-#  };
+  services.ollama-server.enable = true;
 
   hardware.enableRedistributableFirmware = true;
 
