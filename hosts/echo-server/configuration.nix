@@ -30,8 +30,8 @@
     extraGroups = [ "wheel" "networkmanager" "containers" ];
     shell = pkgs.zsh;
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMx7rCshYpRaCXKWXukP20XqAhcQI17cwMfX0cPdVseL valentinl@nova-win-work"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFv4E2OIw3oPMCxyC2oDWlWqn0lrcq0gsom7vwsq8p2r valentinl@hyper-win"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL4ge7qLArJtKK76wOgm01k8nxiyvMq5Y4VaGRbosJgt valentinl@nova-win"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIErw2qRdkMyG3H9blSB5V2VBK0RHLdbgmkLUjYy2GP99 valentinl@hyper-lin"
     ];
   };
 
