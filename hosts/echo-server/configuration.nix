@@ -63,8 +63,16 @@
 
   services.timesyncd.enable = true;
 
-  networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [ 22 ];
+  services.tailscale.enable = true;
+  networking.firewall = {
+    enable = true;
+    trustedInterfaces = [ "tailscale0" ];
+    allowedTCPPorts = [ 22 ];
+    allowedUDPPorts = [ config.services.tailscale.port ];
+  };
+  systemd.services.tailscaled.serviceConfig.Environment = [
+    "TS_DEBUG_FIREWALL_MODE=nftables"
+  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nix.gc = {
