@@ -10,7 +10,7 @@
       ../../modules/nixos/podman-linger-by-group.nix
       ../../modules/nixos/podman-server.nix
       ../../modules/nixos/nvidia-server.nix
-      ../../modules/nixos/ollama-server.nix
+      ../../modules/nixos/lmstudio-server.nix
     ];
 
   boot.loader.systemd-boot.enable = true;
@@ -81,7 +81,7 @@
     options = "--delete-older-than 14d";
   };
 
-  services.ollama-server.enable = true;
+  services.lmstudio-server.enable = true;
 
   hardware.enableRedistributableFirmware = true;
 
