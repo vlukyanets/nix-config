@@ -57,7 +57,7 @@
   };
 
   services.openssh.settings = {
-    PasswordAuthentication = false;
+    PasswordAuthentication = true;
     PermitRootLogin = "no";
   };
 
